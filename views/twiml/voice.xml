@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response>
+  <Say>Connecting, one moment.</Say>
+  <Dial record="true" callerId="{{ caller_id }}">{{ number.destination }}</Dial>
+</Response>

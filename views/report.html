@@ -1,0 +1,26 @@
+{% extends "layout.html" %}
+
+{% block body %}
+<div class="row">
+  <h1>Report #{{ reporter.id }}</h1>
+</div>
+
+<div class="row">
+  <div class="col-md-6">
+    <form class="form" method="POST">
+      <textarea name="body" class="form-control"></textarea>
+      <button type="submit" class="btn btn-warning pull-right">Send</button>
+    </form>
+  </div>
+</div>
+
+{% for message in messages %}
+<div class="row">
+  <div class="well well-sm col-xs-8 col-md-6{% if not message.inbound %} pull-right outbound{% endif %}">
+    <p>{{ message.body }}</p>
+    <p class="text-right"><small>{{ message.created|date("F jS, g:ia") }}</small></p>
+  </div>
+</div>
+{% endfor %}
+
+{% endblock %}

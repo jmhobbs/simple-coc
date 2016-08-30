@@ -1,0 +1,23 @@
+<?php
+
+  if(!defined('SAFE_ENTRY')) {
+    header($_SERVER["SERVER_PROTOCOL"]." 404 Not Found", false, 404);
+    exit;
+  }
+
+  return [
+    'mysql' => [
+      'hostname' => 'localhost',
+      'database' => 'simplecoc',
+      'username' => 'simplecoc',
+      'password' => 'simplecoc'
+    ],
+    'twig' => [
+      'cache' => false
+    ],
+    'twilio' => [
+      'sid' => 'ACa....c',
+      'token' => 'dc....f'
+    ],
+    'secret' => 'some-long-string-here'
+  ];
